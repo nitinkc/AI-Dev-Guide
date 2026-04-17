@@ -4,6 +4,18 @@ site_author: Architecture Learning Series
 
 theme:
   name: mkdocs
+  color_mode: auto
+  user_color_mode_toggle: true
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - java
+    - python
+    - javascript
+    - go
+    - sql
+    - bash
+
 
 plugins:
   - search
@@ -33,6 +45,7 @@ extra_javascript:
   - js/mermaid-init.js
   - js/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/theme-toggle.js
 #  - js/tooltips.js
 
 extra_css:
