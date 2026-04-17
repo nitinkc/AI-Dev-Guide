@@ -1,0 +1,83 @@
+site_name: AI Developer Guide
+site_description: A comprehensive learning portal for modern AI-powered development automation — agents, RAG, MCP, LangGraph, and beyond.
+site_author: Architecture Learning Series
+
+theme:
+  name: mkdocs
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - abbr
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.js
+  - js/mermaid-init.js
+  - js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#  - js/tooltips.js
+
+extra_css:
+  - https://unpkg.com/mermaid@10/dist/mermaid.css
+  - css/myCss.css
+
+nav:
+  - Home: index.md
+  - Foundations:
+    - "01 · AI & LLM Foundations": 01-foundations.md
+    - "01.01 · How LLMs Work": 01.01-how-llms-work.md
+    - "01.02 · Embeddings & Vector Search": 01.02-embeddings-and-vector-search.md
+    - "01.03 · Prompt Engineering": 01.03-prompt-engineering.md
+  - Agentic AI:
+    - "02 · Agentic AI Patterns": 02-agentic-ai.md
+    - "02.01 · ReAct & Planning Loops": 02.01-react-and-planning.md
+    - "02.02 · Multi-Agent Systems": 02.02-multi-agent-systems.md
+  - RAG:
+    - "03 · Retrieval-Augmented Generation": 03-rag.md
+    - "03.01 · RAG Pipeline Deep Dive": 03.01-rag-pipeline.md
+    - "03.02 · Advanced RAG Patterns": 03.02-advanced-rag.md
+  - Orchestration:
+    - "04 · LangGraph & LangChain": 04-langgraph.md
+    - "04.01 · LangGraph Deep Dive": 04.01-langgraph-deep-dive.md
+    - "04.02 · State Machines & Workflows": 04.02-state-machines.md
+  - MCP & Tool Use:
+    - "05 · MCP Servers & Tool Use": 05-mcp-servers.md
+    - "05.01 · MCP Protocol Deep Dive": 05.01-mcp-protocol.md
+    - "05.02 · Building MCP Integrations": 05.02-mcp-integrations.md
+  - Ecosystem & Integration:
+    - "06 · AI Tool Ecosystem": 06-tool-ecosystem.md
+    - "06.01 · GitHub Copilot & Coding Agents": 06.01-coding-agents.md
+    - "06.02 · JIRA & Issue Tracker Integration": 06.02-jira-integration.md
+    - "06.03 · CI/CD Integration": 06.03-cicd-integration.md
+  - Use Cases:
+    - "07 · Real-World Use Cases": 07-use-cases.md
+    - "07.01 · JIRA to Pull Request (Case 1)": 07.01-jira-to-pr.md
+    - "07.02 · Playwright RCA & Auto-Fix (Case 2)": 07.02-playwright-rca.md
+    - "07.03 · Spring Boot Code Generation": 07.03-springboot-codegen.md
+  - Security:
+    - "08 · AI Security & Governance": 08-security.md
+    - "08.01 · Prompt Injection & LLM Attacks": 08.01-prompt-injection.md
+    - "08.02 · Data Privacy in AI Pipelines": 08.02-data-privacy.md
+    - "08.03 · Guardrails & Policy Enforcement": 08.03-guardrails.md
+  - Reference:
+    - "Architecture Patterns Reference": 09-architecture-reference.md
+    - "Interview Q&A": 10-interview.md
+

@@ -1,0 +1,19 @@
+/* ---- BOOTSTRAP DROPDOWN MENU OVERRIDE ---- */
+/* Override Bootstrap dropdown active link color for light theme */
+/* Change --bs-dropdown-link-active-color from white to black */
+.dropdown-menu {
+    --bs-dropdown-link-active-color: #0056b3;
+}
+
+[data-bs-theme="dark"] .bs-body-bg {
+    background-color: #ffffff;
+}
+
+/* ---- ABBREVIATION / TOOLTIP STYLING ---- */
+/* Underline styling only — the floating tooltip bubble is handled by js/tooltips.js */
+abbr[title],
+abbr[data-title] {
+    text-decoration: underline dotted 1.5px;
+    text-underline-offset: 3px;
+    cursor: help;
+}
