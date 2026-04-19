@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Development Automation — Executive Presentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link rel="stylesheet" href="css/presentation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Title Slide -->
+            <section>
+                <h1>AI-Powered Development Automation</h1>
+                <p class="subtitle">Automating the manual, accelerating the meaningful</p>
+                <p class="date">April 2026</p>
+            </section>
+
+            <!-- SLIDE 2: The Problem -->
+            <section>
+                <h2>The Problem: Engineering Time Wasted on Toil</h2>
+                <ul style="font-size: 0.95em;">
+                    <li>Developers spend <strong>30–40% of time</strong> on repetitive, low-value tasks</li>
+                    <li style="margin-top: 20px;">Pain points:
+                        <ul style="font-size: 0.95em; margin-top: 10px;">
+                            <li>JIRA ticket triage, grooming, and hand-off are <strong>manual and slow</strong></li>
+                            <li>Playwright E2E test failures require <strong>30–120 min/failure</strong> to investigate</li>
+                            <li>QA cycles bottlenecked by developer availability</li>
+                            <li>Spring Boot boilerplate consumes senior engineer time</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="stat">
+                    "Each CI failure costs ~1 hour of developer time.<br>
+                    10 failures/week = 1 dev-week/month lost"
+                </div>
+            </section>
+
+            <!-- SLIDE 3: Status Quo -->
+            <section>
+                <h2>Status Quo: Manual Workflow Bottlenecks</h2>
+                <div style="text-align: left; font-size: 0.95em;">
+                    <p><strong>JIRA → Code Flow:</strong><br>
+                    JIRA ticket → developer reads → writes code → writes tests → opens PR<br>
+                    <em style="color: #8b949e;">Days elapsed</em></p>
+
+                    <p style="margin-top: 30px;"><strong>CI Failure Flow:</strong><br>
+                    CI fails → developer investigates → reproduces → fixes → re-pushes<br>
+                    <em style="color: #8b949e;">Hours elapsed</em></p>
+
+                    <div class="callout" style="margin-top: 30px; font-size: 0.95em;">
+                        <strong>Key insight:</strong> These workflows are <strong>structured, repeatable, and automatable</strong>.<br>
+                        No AI currently sits between ticket creation and PR creation.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Our Solution -->
+            <section>
+                <h2>Our Solution: AI Agentic Automation Platform</h2>
+                <div style="text-align: left; font-size: 0.92em;">
+                    <p style="margin-bottom: 20px;">An <strong>event-driven AI agent system</strong> that handles routine development tasks end-to-end</p>
+
+                    <p><strong>Core Technology Stack:</strong></p>
+                    <ul style="font-size: 0.95em;">
+                        <li><strong>LLMs</strong> (Claude 3.5 Sonnet / GPT-4o) — reasoning and code generation</li>
+                        <li><strong>RAG</strong> — vector-indexed codebase for context-aware code retrieval</li>
+                        <li><strong>LangGraph</strong> — stateful orchestration with human-in-the-loop safety gates</li>
+                        <li><strong>MCP Servers</strong> — standardised tool integrations for JIRA, GitHub, Playwright</li>
+                    </ul>
+
+                    <p style="margin-top: 20px;">✓ Human approval gates before every irreversible action</p>
+                </div>
+                <div class="callout" style="margin-top: 30px; font-size: 0.95em; background: rgba(88, 166, 255, 0.12);">
+                    "AI proposes. Humans approve. CI validates."
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Solution Architecture -->
+            <section>
+                <h2>Solution Architecture (High-Level)</h2>
+                <div class="architecture-diagram">
+                    <svg viewBox="0 0 1000 500" width="90%" style="max-height: 350px;">
+                        <!-- Triggers -->
+                        <rect x="50" y="40" width="200" height="80" fill="rgba(88, 166, 255, 0.2)" stroke="#58a6ff" stroke-width="2" rx="8"/>
+                        <text x="150" y="75" text-anchor="middle" fill="#58a6ff" font-weight="bold" font-size="16">Triggers</text>
+                        <text x="150" y="100" text-anchor="middle" fill="#e6edf3" font-size="13">JIRA Webhook</text>
+                        <text x="150" y="120" text-anchor="middle" fill="#e6edf3" font-size="13">CI Failure Webhook</text>
+
+                        <!-- Orchestration -->
+                        <rect x="350" y="40" width="200" height="80" fill="rgba(88, 166, 255, 0.2)" stroke="#58a6ff" stroke-width="2" rx="8"/>
+                        <text x="450" y="75" text-anchor="middle" fill="#58a6ff" font-weight="bold" font-size="16">Orchestration</text>
+                        <text x="450" y="100" text-anchor="middle" fill="#e6edf3" font-size="13">LangGraph State</text>
+                        <text x="450" y="120" text-anchor="middle" fill="#e6edf3" font-size="13">Machine</text>
+
+                        <!-- Tool Layer -->
+                        <rect x="650" y="40" width="200" height="80" fill="rgba(88, 166, 255, 0.2)" stroke="#58a6ff" stroke-width="2" rx="8"/>
+                        <text x="750" y="75" text-anchor="middle" fill="#58a6ff" font-weight="bold" font-size="16">Tool Layer</text>
+                        <text x="750" y="100" text-anchor="middle" fill="#e6edf3" font-size="13">JIRA/GitHub/Playwright</text>
+                        <text x="750" y="120" text-anchor="middle" fill="#e6edf3" font-size="13">MCP + pgvector Index</text>
+
+                        <!-- Arrows down -->
+                        <path d="M 150 120 L 150 180" stroke="#58a6ff" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 450 120 L 450 180" stroke="#58a6ff" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 750 120 L 750 180" stroke="#58a6ff" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- LLM Core -->
+                        <rect x="300" y="180" width="400" height="70" fill="rgba(88, 166, 255, 0.15)" stroke="#58a6ff" stroke-width="2" rx="8"/>
+                        <text x="500" y="210" text-anchor="middle" fill="#58a6ff" font-weight="bold" font-size="16">LLM Core</text>
+                        <text x="500" y="235" text-anchor="middle" fill="#e6edf3" font-size="13">Claude 3.5 Sonnet / GPT-4o with ReAct planning</text>
+
+                        <!-- Outputs -->
+                        <rect x="200" y="320" width="180" height="80" fill="rgba(88, 166, 255, 0.2)" stroke="#58a6ff" stroke-width="2" rx="8"/>
+                        <text x="290" y="355" text-anchor="middle" fill="#58a6ff" font-weight="bold" font-size="14">Outputs</text>
+                        <text x="290" y="375" text-anchor="middle" fill="#e6edf3" font-size="12">GitHub PR</text>
+                        <text x="290" y="390" text-anchor="middle" fill="#e6edf3" font-size="12">JIRA Comment</text>
+
+                        <!-- Human Gate -->
+                        <rect x="550" y="320" width="180" height="80" fill="rgba(88, 166, 255, 0.25)" stroke="#58a6ff" stroke-width="3" rx="8"/>
+                        <text x="640" y="355" text-anchor="middle" fill="#58a6ff" font-weight="bold" font-size="14">Human Gate</text>
+                        <text x="640" y="375" text-anchor="middle" fill="#e6edf3" font-size="12">Approve/Reject</text>
+                        <text x="640" y="390" text-anchor="middle" fill="#e6edf3" font-size="12">Before PR/Push</text>
+
+                        <!-- Arrows from LLM to outputs -->
+                        <path d="M 400 250 L 320 320" stroke="#58a6ff" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 600 250 L 660 320" stroke="#58a6ff" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- Arrow definitions -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#58a6ff"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+                <ul style="font-size: 0.9em; margin-top: 20px;">
+                    <li>Fully event-driven, no polling, resumable via PostgreSQL checkpointer</li>
+                    <li><strong>Key design principle:</strong> Human interrupt gate is <strong>non-negotiable</strong> before PR creation</li>
+                </ul>
+            </section>
+
+            <!-- SLIDE 6: Use Case 1 -->
+            <section>
+                <h2>Use Case 1: JIRA Ticket → Pull Request</h2>
+                <div style="text-align: left; font-size: 0.92em;">
+                    <p><strong>Trigger:</strong> Ticket assigned to AI agent in JIRA</p>
+
+                    <p style="margin-top: 15px;"><strong>Agent Flow:</strong><br>
+                    Read ticket → Classify → RAG retrieve → ReAct plan → Generate → Write tests → Validate → <span style="background: rgba(88, 166, 255, 0.2); padding: 4px 8px; border-radius: 3px;"><strong>Human review</strong></span> → Open PR</p>
+
+                    <p style="margin-top: 15px;"><strong>PR includes:</strong> Root cause (bugs), AC coverage table (features), AI-generated notice</p>
+
+                    <p style="margin-top: 15px;"><strong>Guardrails:</strong> Diff scope validator (>50 lines → human flag), multi-service → escalation</p>
+
+                    <table style="margin-top: 20px; font-size: 0.85em;">
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>End-to-end run time</td>
+                            <td><strong>3–15 minutes</strong> per ticket</td>
+                        </tr>
+                        <tr>
+                            <td>API cost</td>
+                            <td><strong>$0.05–$2.00</strong> per ticket</td>
+                        </tr>
+                        <tr>
+                            <td>Manual time saved</td>
+                            <td><strong>2–4 hours</strong> per ticket</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Use Case 2 -->
+            <section>
+                <h2>Use Case 2: Playwright CI Failure → RCA & Auto-Fix</h2>
+                <div style="text-align: left; font-size: 0.92em;">
+                    <p><strong>Trigger:</strong> GitHub Actions detects Playwright test failure</p>
+
+                    <p style="margin-top: 15px;"><strong>Agent Flow:</strong><br>
+                    Download test report + screenshots + logs → Classify failure type → Auto-fix OR RCA document → Push commit or post to PR</p>
+
+                    <p style="margin-top: 15px;"><strong>Failure types handled:</strong> Flaky timing, broken selectors, API contract breaks, environment issues</p>
+
+                    <table style="margin-top: 20px; font-size: 0.85em;">
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                        </tr>
+                        <tr>
+                            <td>Agent analysis time</td>
+                            <td><strong>&lt; 2 minutes</strong> vs 30–120 min manual</td>
+                        </tr>
+                        <tr>
+                            <td>Correct classification rate</td>
+                            <td><strong>&gt;90%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Auto-fixes passing on first try</td>
+                            <td><strong>&gt;70%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Investigation time reduction</td>
+                            <td><strong>&gt;60%</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: The Advantage -->
+            <section>
+                <h2>The Advantage: Speed, Accuracy & Developer Focus</h2>
+                <table style="font-size: 0.85em; margin-top: 30px;">
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Before</th>
+                        <th>After</th>
+                    </tr>
+                    <tr>
+                        <td>JIRA → PR cycle time</td>
+                        <td>1–3 days</td>
+                        <td><strong>3–15 minutes</strong></td>
+                    </tr>
+                    <tr>
+                        <td>CI failure investigation</td>
+                        <td>30–120 min</td>
+                        <td><strong>&lt; 2 minutes</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Developer context switching</td>
+                        <td>High (interruptions)</td>
+                        <td><strong>Low (agent handles triage)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Test coverage per PR</td>
+                        <td>Variable</td>
+                        <td><strong>Enforced per AC</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Cost per ticket automation</td>
+                        <td>—</td>
+                        <td><strong>$0.05–$2.00</strong></td>
+                    </tr>
+                </table>
+                <p style="margin-top: 30px; font-size: 0.95em;">
+                    Human engineers refocus on: <strong>architecture decisions, complex features, code review quality</strong>
+                </p>
+            </section>
+
+            <!-- SLIDE 9: Safety & Governance -->
+            <section>
+                <h2>Safety & Governance</h2>
+                <ul style="font-size: 0.93em;">
+                    <li>Every AI action is <strong>reversible or gated</strong> before taking effect</li>
+                    <li>Human-in-the-loop via LangGraph <strong>interrupt</strong> before PR creation and commit push</li>
+                    <li>Input/output guardrails (Guardrails AI) — <strong>no PII or secrets</strong> in LLM context</li>
+                    <li>Secret scanning (gitleaks/TruffleHog) on generated code before push</li>
+                    <li>Full audit trail: <strong>LangSmith/Langfuse tracing</strong>, PostgreSQL state checkpointing</li>
+                    <li>AI-generated PRs are <strong>clearly labelled</strong> — no stealth automation</li>
+                </ul>
+                <div class="callout" style="margin-top: 30px; font-size: 1em; background: rgba(88, 166, 255, 0.12); border-left: 4px solid #ff6b6b;">
+                    <strong style="color: #e6edf3;">"The agent cannot merge.</strong> <span style="color: #ff6b6b; font-weight: 600;">Only humans merge.</span><strong style="color: #e6edf3;">"</strong>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: Team & Phased Delivery -->
+            <section>
+                <h2>How We Approached It: Team & Phased Delivery</h2>
+                <div style="text-align: left; font-size: 0.9em;">
+                    <p><strong>Team Structure (4 roles):</strong></p>
+                    <ul class="team-roles">
+                        <li><strong>AI/ML Engineer</strong> — LangGraph orchestration, RAG pipeline, LLM integration</li>
+                        <li><strong>Backend Engineer</strong> — Spring Boot services, MCP adapters, build sandbox</li>
+                        <li><strong>QA/Automation Engineer</strong> — Playwright MCP, test classification logic</li>
+                        <li><strong>DevOps/Platform Engineer</strong> — CI webhooks, Docker sandbox, PostgreSQL checkpointer</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 25px; text-align: left; font-size: 0.9em;"><strong>Phased Timeline:</strong></p>
+                <table style="font-size: 0.8em;">
+                    <tr>
+                        <th>Phase</th>
+                        <th>Weeks</th>
+                        <th>Focus</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 1</strong></td>
+                        <td>1–4</td>
+                        <td>Foundations: RAG index, JIRA MCP, LangGraph, human gates</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 2</strong></td>
+                        <td>5–8</td>
+                        <td>Use Case 1: JIRA → PR (bugs, then features)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 3</strong></td>
+                        <td>9–12</td>
+                        <td>Use Case 2: Playwright RCA + auto-fix + CI integration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 4</strong></td>
+                        <td>13+</td>
+                        <td>Expansion: code review, docs, dependency upgrades</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- SLIDE 11: Expansion Roadmap -->
+            <section>
+                <h2>What Else This Platform Enables</h2>
+                <p style="text-align: left; font-size: 0.95em; margin-bottom: 20px;"><strong>Expansion Roadmap — Same Stack, New Targets:</strong></p>
+                <ul style="font-size: 0.92em;">
+                    <li>Automated code review comments (security, style, coverage) on every PR</li>
+                    <li>Documentation generation from merged code changes</li>
+                    <li>Dependency upgrade PRs triggered by security advisories</li>
+                    <li>On-call runbook execution from PagerDuty alerts</li>
+                    <li>Sprint retrospective summaries from completed JIRA tickets</li>
+                    <li>Test gap detection — weekly scan for uncovered code paths</li>
+                </ul>
+                <div class="callout" style="margin-top: 30px; font-size: 0.95em; background: rgba(88, 166, 255, 0.12);">
+                    <strong>Message:</strong> The platform is an <strong>investment in infrastructure</strong>, not a one-off script.
+                </div>
+            </section>
+
+            <!-- SLIDE 12: Summary & Next Steps -->
+            <section>
+                <h2>Summary & Next Steps</h2>
+                <div style="text-align: left; font-size: 0.93em;">
+                    <p><strong>Three-Sentence Executive Summary:</strong></p>
+                    <ol style="margin-top: 15px;">
+                        <li>We built an AI agent platform that turns JIRA tickets into PRs and Playwright failures into root cause reports — autonomously, in minutes, with human approval gates before any code lands.</li>
+                        <li style="margin-top: 15px;">The system uses production-grade LLMs, a RAG-indexed codebase, and standardised MCP integrations with JIRA, GitHub, and Playwright.</li>
+                        <li style="margin-top: 15px;">Initial use cases show <strong>10–50× time savings</strong> on routine tasks, with a clear expansion roadmap.</li>
+                    </ol>
+
+                    <p style="margin-top: 30px; border-top: 1px solid rgba(88, 166, 255, 0.3); padding-top: 20px;"><strong>Call to Action:</strong></p>
+                    <ul style="margin-top: 15px; font-size: 0.92em;">
+                        <li>Approve Phase 2 resourcing to productionise Use Case 1</li>
+                        <li>Schedule a live demo of the JIRA → PR flow</li>
+                        <li>Define the list of Spring Boot services to onboard first</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="keyboard-hint">
+        <div>← → Space to navigate</div>
+        <div>ESC for slide overview</div>
+        <div style="margin-top: 8px; font-style: italic;">Scroll within slides to see all content</div>
+    </div>
+
+    <script src="js/presentation.js"></script>
+</body>
+</html>
+

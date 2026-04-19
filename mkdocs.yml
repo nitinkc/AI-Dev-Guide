@@ -59,38 +59,66 @@ nav:
     - "01.01 · How LLMs Work": 01.01-how-llms-work.md
     - "01.02 · Embeddings & Vector Search": 01.02-embeddings-and-vector-search.md
     - "01.03 · Prompt Engineering": 01.03-prompt-engineering.md
-  - Agentic AI:
+  - Agents & RAG:
     - "02 · Agentic AI Patterns": 02-agentic-ai.md
     - "02.01 · ReAct & Planning Loops": 02.01-react-and-planning.md
     - "02.02 · Multi-Agent Systems": 02.02-multi-agent-systems.md
-  - RAG:
     - "03 · Retrieval-Augmented Generation": 03-rag.md
     - "03.01 · RAG Pipeline Deep Dive": 03.01-rag-pipeline.md
     - "03.02 · Advanced RAG Patterns": 03.02-advanced-rag.md
-  - Orchestration:
+  - Orchestration & MCP:
     - "04 · LangGraph & LangChain": 04-langgraph.md
     - "04.01 · LangGraph Deep Dive": 04.01-langgraph-deep-dive.md
     - "04.02 · State Machines & Workflows": 04.02-state-machines.md
-  - MCP & Tool Use:
     - "05 · MCP Servers & Tool Use": 05-mcp-servers.md
     - "05.01 · MCP Protocol Deep Dive": 05.01-mcp-protocol.md
     - "05.02 · Building MCP Integrations": 05.02-mcp-integrations.md
-  - Ecosystem & Integration:
+  - Ecosystem & Use Cases:
     - "06 · AI Tool Ecosystem": 06-tool-ecosystem.md
     - "06.01 · GitHub Copilot & Coding Agents": 06.01-coding-agents.md
     - "06.02 · JIRA & Issue Tracker Integration": 06.02-jira-integration.md
     - "06.03 · CI/CD Integration": 06.03-cicd-integration.md
-  - Use Cases:
     - "07 · Real-World Use Cases": 07-use-cases.md
     - "07.01 · JIRA to Pull Request (Case 1)": 07.01-jira-to-pr.md
     - "07.02 · Playwright RCA & Auto-Fix (Case 2)": 07.02-playwright-rca.md
     - "07.03 · Spring Boot Code Generation": 07.03-springboot-codegen.md
-  - Security:
+  - Security & Reference:
     - "08 · AI Security & Governance": 08-security.md
     - "08.01 · Prompt Injection & LLM Attacks": 08.01-prompt-injection.md
     - "08.02 · Data Privacy in AI Pipelines": 08.02-data-privacy.md
     - "08.03 · Guardrails & Policy Enforcement": 08.03-guardrails.md
-  - Reference:
     - "Architecture Patterns Reference": 09-architecture-reference.md
     - "Interview Q&A": 10-interview.md
+  - "Demo Project (Multi-Cloud: AWS, GCP, Azure)":
+    - "00 · TaskMaster Demo Overview": demo-project/00-overview.md
+    - Decision Guides:
+      - "Quick Start: MCP vs Direct API": demo-project/MCP-Decision-OnePager.md
+      - "Complete Comparison: MCP vs Direct API": demo-project/MCP-vs-Direct-API-Comparison.md
+      - "Implementation Roadmap": demo-project/Implementation-Quickstart.md
+      - "Visual Decision Guide": demo-project/Visual-Decision-Guide.md
+    - Multi-Cloud Implementation:
+      - "START HERE: Multi-Cloud Guide": demo-project/START-HERE-MULTICLOUD.md
+      - "Multi-Cloud MCP Servers (AWS/GCP/Azure)": demo-project/06-multi-cloud-mcp.md
+      - "Multi-Cloud Deployment Guide": demo-project/06.01-multicloud-deployment.md
+      - "Cloud Equivalency Reference (AWS-GCP-Azure)": demo-project/Cloud-Equivalency-Reference.md
+      - "Multi-Cloud Index": demo-project/MULTICLOUD-INDEX.md
+      - "Multi-Cloud Complete Summary": demo-project/MULTICLOUD-COMPLETE-SUMMARY.md
+    - Implementation Guides:
+      - "Week 1 Checklist: Getting Started": demo-project/Week1-Checklist.md
+      - "Implementation Guides Index": demo-project/Implementation-Guides-Index.md
+      - "Complete Answer: MCP vs Direct API": demo-project/ANSWER-MCP-vs-DirectAPI.md
+    - AWS-Specific Deep Dives:
+      - "01 · AWS Infrastructure Setup": demo-project/01-aws-infra.md
+      - "02 · TaskMaster Repo Structure": demo-project/02-taskmaster-repo.md
+      - "03 · JIRA Personal Account Setup": demo-project/03-jira-setup.md
+      - "04 · GitHub Repo & PAT Setup": demo-project/04-github-setup.md
+      - "05 · RAG Code Indexing Pipeline": demo-project/05-rag-indexing.md
+      - "06 · LangGraph Agent Design": demo-project/06-langgraph-agent.md
+      - "07 · MCP Servers (JIRA + GitHub)": demo-project/07-mcp-servers.md
+      - "08 · Chat Engine (FastAPI)": demo-project/08-chat-engine.md
+      - "09 · Human-in-the-Loop Design": demo-project/09-hitl-design.md
+      - "10 · End-to-End Flow Walkthrough": demo-project/10-e2e-flow.md
+      - "11 · Demo Script & Facilitator Guide": demo-project/11-demo-script.md
+  - Executive Presentations:
+    - "Presentation Plan": exec-presentation-plan.md
 
