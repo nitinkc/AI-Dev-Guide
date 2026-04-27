@@ -76,6 +76,7 @@ nav:
   - Ecosystem & Use Cases:
     - "06 · AI Tool Ecosystem": 06-tool-ecosystem.md
     - "06.01 · GitHub Copilot & Coding Agents": 06.01-coding-agents.md
+    - "06.04 · Custom Agent Workflows (analyze / dev / review)": 06.04-custom-agent-workflows.md
     - "06.02 · JIRA & Issue Tracker Integration": 06.02-jira-integration.md
     - "06.03 · CI/CD Integration": 06.03-cicd-integration.md
     - "07 · Real-World Use Cases": 07-use-cases.md
